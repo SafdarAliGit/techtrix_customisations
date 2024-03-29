@@ -1,0 +1,42 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-01-19 01:41:23.534672",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "TECHTRIX SYSTEM",
+ "modified": "2024-01-19 01:41:23.534672",
+ "modified_by": "Administrator",
+ "module": "Techtrix Customisations",
+ "name": "Profit and Loss Statement Techtrix",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "GL Entry",
+ "report_name": "Profit and Loss Statement Techtrix",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Auditor"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Payable Lead"
+  },
+  {
+   "role": "Receviable Lead"
+  },
+  {
+   "role": "Deputy Manager Accounts"
+  }
+ ]
+}

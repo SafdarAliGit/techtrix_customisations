@@ -1,0 +1,187 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "PRC - .#####",
+ "creation": "2023-05-20 17:30:04.065389",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "item_code",
+  "serial_nos",
+  "item_name",
+  "column_break_4",
+  "company",
+  "posting_date",
+  "posting_time",
+  "warehouse",
+  "qty",
+  "basic_rate",
+  "parts_section",
+  "items",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nAssemble\nDisassemble",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "no_copy": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "serial_number.purchase_rate",
+   "fieldname": "basic_rate",
+   "fieldtype": "Currency",
+   "label": "Rate of Assembel Item",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "assembedeassembe_item.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Assembe/DeAssembe Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Assemble Item Detail"
+  },
+  {
+   "depends_on": "eval: doc.type == 'Disassemble'",
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "label": "Qty of Assembe/DeAssembe Item",
+   "mandatory_depends_on": "eval: doc.type == 'Disassemble'"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "parts_section",
+   "fieldtype": "Section Break",
+   "label": "Parts"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Product Customized",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Production Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "print_hide": 1,
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "no_copy": 1,
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval: doc.item_code",
+   "fieldname": "serial_nos",
+   "fieldtype": "Table MultiSelect",
+   "label": "Serial Nos",
+   "options": "Serial No Child",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-07-11 13:25:36.214515",
+ "modified_by": "Administrator",
+ "module": "Techtrix Customisations",
+ "name": "Product Customized",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Assemble / De Assemble",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

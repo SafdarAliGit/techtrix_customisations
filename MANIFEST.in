@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include techtrix_customisations *.css
+recursive-include techtrix_customisations *.csv
+recursive-include techtrix_customisations *.html
+recursive-include techtrix_customisations *.ico
+recursive-include techtrix_customisations *.js
+recursive-include techtrix_customisations *.json
+recursive-include techtrix_customisations *.md
+recursive-include techtrix_customisations *.png
+recursive-include techtrix_customisations *.py
+recursive-include techtrix_customisations *.svg
+recursive-include techtrix_customisations *.txt
+recursive-exclude techtrix_customisations *.pyc
