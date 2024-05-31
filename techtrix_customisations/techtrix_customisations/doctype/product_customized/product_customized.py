@@ -151,7 +151,7 @@ class ProductCustomized(Document):
 			items = []
 			
 			for d in self.items:
-				serial_no = make_autoname("{0}-{1}-.######".format(d.production_serial_no, d.item_code))
+				serial_no = make_autoname("PC-.######")
 				serial_no = create_serial_no(serial_no, d.item_code)
 				d.db_set("serial_no", serial_no)
 
