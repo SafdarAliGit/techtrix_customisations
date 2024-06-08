@@ -2,13 +2,14 @@
 # For license information, please see license.txt
 
 import frappe
-from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos, SerialNoItemError
 from frappe import _
 from frappe.utils import cint, cstr, flt
 from frappe.model.document import Document
 
 from erpnext.stock.get_item_details import get_bin_details
 from frappe.model.naming import make_autoname
+from techtrix_customisations.api import get_serial_nos
+from techtrix_customisations.techtrix_customisations.doctype.serial_no import SerialNoItemError
 
 
 class ProductCustomized(Document):
